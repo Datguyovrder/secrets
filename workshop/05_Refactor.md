@@ -98,7 +98,7 @@ const belongsTo = (req, res, next) => {
       if (secret.userId !== userId) {
         res.sendStatus(401);
       } else {
-        res.user.secret = secret
+        req.user.secret = secret
         next();
       }
     });
